@@ -22,7 +22,12 @@
         <label for="checkbox1" class="form-check-label">
           <input class="checkbox" type="checkbox" [checked]="item.isComplete" [attr.data-index]="i"
             (click)="toggleItem(item)" />
-          {{ item.wishText }} - {{ i }}
+
+          <span>
+            {{ item.wishText }}
+          </span>
+
+          <button class="fa fa-close" (click)="deleteSpecificWish(i)"></button>
         </label>
       </div>
     </li>

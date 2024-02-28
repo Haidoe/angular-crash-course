@@ -25,13 +25,15 @@ export class AppComponent {
     console.log(this.newWishText);
     this.items.push(new WishItem(this.newWishText));
     this.newWishText = '';
-    // todo: add wish to items array
-    // todo: clear text box
+  }
+
+  deleteSpecificWish(index: number) {
+    this.items = this.items.filter(
+      (item) => this.items[index].wishText !== item.wishText
+    );
   }
 
   toggleItem(item: WishItem) {
     item.isComplete = !item.isComplete;
-
-    console.log('ITEM CLICKED!!', item);
   }
 }
