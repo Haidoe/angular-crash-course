@@ -4,12 +4,12 @@
   } @else {
 
   <ul class="wish-list">
-    @for(item of items; track item.isComplete) {
+    @for(item of items; track item.isComplete; let i = $index ) {
     <li>
       <div class="form-check">
         <label for="checkbox1" class="form-check-label">
-          <input class="checkbox" type="checkbox">
-          {{ item.wishText }}
+          <input class="checkbox" type="checkbox" [checked]="item.isComplete" [attr.data-index]="i">
+          {{ item.wishText }} - {{ i }}
         </label>
       </div>
     </li>
