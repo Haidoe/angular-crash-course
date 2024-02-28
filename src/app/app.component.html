@@ -1,7 +1,11 @@
 <div class="container">
+  @if(items.length === 0) {
+  <span>No Wish List Item</span>
+  } @else {
 
   <ul class="wish-list">
-    <li *ngFor="let item of items">
+    @for(item of items; track item.isComplete) {
+    <li>
       <div class="form-check">
         <label for="checkbox1" class="form-check-label">
           <input class="checkbox" type="checkbox">
@@ -9,6 +13,11 @@
         </label>
       </div>
     </li>
+    }
   </ul>
+  }
+
+
+
 
 </div>
