@@ -8,7 +8,8 @@
     <li>
       <div class="form-check">
         <label for="checkbox1" class="form-check-label">
-          <input class="checkbox" type="checkbox" [checked]="item.isComplete" [attr.data-index]="i">
+          <input class="checkbox" type="checkbox" [checked]="item.isComplete" [attr.data-index]="i"
+            (click)="toggleItem(item)" />
           {{ item.wishText }} - {{ i }}
         </label>
       </div>
